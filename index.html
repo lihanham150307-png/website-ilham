@@ -1,118 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Glow Beauty Klinik</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Beauty Clinic</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #fff0f5;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
 
-        .header {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
+/* HERO */
+.hero {
+  background: url('klinik.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
 
-        .header img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  animation: fadeIn 2s;
+}
 
-        .header-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+.hero p {
+  animation: fadeIn 3s;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
+.btn {
+  background: #00c853;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: 0.3s;
+}
 
-        .section {
-            padding: 30px;
-            text-align: center;
-        }
+.btn:hover {
+  background: #00a844;
+  transform: scale(1.05);
+}
 
-        .layanan {
-            background: white;
-            margin: 10px auto;
-            padding: 15px;
-            border-radius: 10px;
-            width: 250px;
-        }
+/* SECTION */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
 
-        .testimoni {
-            background: #ffe4ec;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-        }
+/* CARD */
+.card {
+  background: white;
+  padding: 15px;
+  margin: 10px auto;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
 
-    </style>
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* TESTIMONI */
+.testi {
+  background: #ffe4ec;
+  padding: 15px;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 80%;
+}
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+
 </head>
-
 <body>
 
-    <!-- HEADER + GAMBAR -->
-    <div class="header">
-        <img src="klinik.jpg">
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>✨ Nama Klinik Anda ✨</h1>
+    <p>Kulit glowing & sehat mulai dari sini</p>
+    <a href="#" class="btn">🍬 Booking Sekarang</a>
+  </div>
+</div>
 
-        <div class="header-text">
-            <h1>Glow Beauty Clinik</h1>
-            <p>✨ Kulit glowing & sehat mulai dari sini</p>
+<!-- LAYANAN -->
+<section>
+  <h2>🍭 Layanan Kami</h2>
 
-            <a class="btn" href="https://wa.me/628893618620" class="bth">Chat WhatsApp</a>
-        </div>
-    </div>
+  <div class="card">Facial Treatment</div>
+  <div class="card">Botox & Filler</div>
+  <div class="card">Perawatan Jerawat</div>
+</section>
 
-    <!-- LAYANAN -->
-    <div class="section">
-        <h2>Layanan Kami</h2>
+<!-- KEUNGGULAN -->
+<section>
+  <h2>✨ Kenapa Pilih Kami?</h2>
+  <p>Dokter profesional, alat modern, dan hasil terpercaya</p>
+</section>
 
-        <div class="layanan">Facial Treatment</div>
-        <div class="layanan">Botox & Filler</div>
-        <div class="layanan">Perawatan Jerawat</div>
-    </div>
+<!-- TESTIMONI -->
+<section>
+  <h2>💖 Testimoni</h2>
 
-    <!-- KEUNGGULAN -->
-    <div class="section">
-        <h2>Kenapa Pilih Kami?</h2>
-        <p>Dokter profesional, alat modern, dan hasil terpercaya</p>
-    </div>
+  <div class="testi">"Pelayanan sangat memuaskan!" - Siti</div>
+  <div class="testi">"Kulit saya jadi glowing!" - Rina</div>
+</section>
 
-    <!-- TESTIMONI -->
-    <div class="section">
-        <h2>Testimoni</h2>
+<!-- KONTAK -->
+<section>
+  <h2>📞 Hubungi Kami</h2>
+  <p>📍 Jl. Contoh No.123</p>
+  <p>📞 0812-3456-7890</p>
+  <p>📧 klinik@email.com</p>
+</section>
 
-        <div class="testimoni">
-            "Pelayanan sangat memuaskan!" - Siti
-        </div>
-
-        <div class="testimoni">
-            "Kulit saya jadi glowing!" - Rina
-        </div>
-    </div>
-    <section style="padding: 40px; text-align: center;">
-        <h2>Hubungi Kmai</h2>
-        <P>📄📍 Alamat: Jl. contoh No. 123</P>
-        <p>📞 WhatsApp: 0889-3618-620</p>
-        <p>📧 Email: klinik@email.com</p>
-    </section>
-
-    <footer style="background: #333; color: white; text-align: center; padding: 20px;">
-    <p>© 2026 Glow Beauty Clinik</p>
-    </footer>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Nama Klinik Anda ✨</p>
+</footer>
 
 </body>
 </html>
