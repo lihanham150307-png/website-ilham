@@ -8,14 +8,36 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fafafa;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  width: 100%;
+}
+
+nav h2 {
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  margin-left: 15px;
+  color: black;
 }
 
 /* HERO */
 .hero {
-  background: url('klinik.jpg') center/cover no-repeat;
-  height: 90vh;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('klinik.jpeg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,122 +46,133 @@ body {
 }
 
 .hero h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-  animation: fadeIn 2s;
-}
-
-.hero p {
-  animation: fadeIn 3s;
+  font-size: 45px;
 }
 
 .btn {
-  background: #00c853;
-  color: white;
+  background: #25D366;
   padding: 12px 25px;
-  border-radius: 25px;
+  border-radius: 30px;
+  color: white;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 15px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #00a844;
-  transform: scale(1.05);
 }
 
 /* SECTION */
 section {
-  padding: 50px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
-/* CARD */
+/* GRID */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card {
   background: white;
-  padding: 15px;
-  margin: 10px auto;
+  margin: 10px;
+  padding: 20px;
   width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
-/* TESTIMONI */
+/* TESTI */
 .testi {
   background: #ffe4ec;
-  padding: 15px;
   margin: 10px auto;
+  padding: 20px;
   border-radius: 10px;
   width: 80%;
 }
 
 /* FOOTER */
 footer {
-  background: #333;
+  background: #111;
   color: white;
-  padding: 20px;
+  padding: 30px;
 }
 
-/* ANIMASI */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+/* WA FLOAT */
+.wa {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
 }
 </style>
-
 </head>
+
 <body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Glow Clinic</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Layanan</a>
+    <a href="#">Kontak</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
   <div>
-    <h1>✨ Glow Beauty Clinic ✨</h1>
-    <p>Kulit glowing & sehat mulai dari sini</p>
-    <a href="#" class="btn">🍬 Booking Sekarang</a>
+    <h1>✨ Kulit Sehat & Glowing ✨</h1>
+    <p>Perawatan profesional dengan hasil maksimal</p>
+    <br>
+    <a href="https://wa.me/6281234567890" class="btn">Booking Sekarang</a>
   </div>
 </div>
 
 <!-- LAYANAN -->
 <section>
-  <h2>🍭 Layanan Kami</h2>
-
-  <div class="card">Facial Treatment</div>
-  <div class="card">Botox & Filler</div>
-  <div class="card">Perawatan Jerawat</div>
+  <h2>Layanan Kami</h2>
+  <div class="grid">
+    <div class="card">Facial Treatment</div>
+    <div class="card">Botox & Filler</div>
+    <div class="card">Perawatan Jerawat</div>
+  </div>
 </section>
 
-<!-- KEUNGGULAN -->
+<!-- TENTANG -->
 <section>
-  <h2>✨ Kenapa Pilih Kami?</h2>
-  <p>Dokter profesional, alat modern, dan hasil terpercaya</p>
+  <h2>Tentang Kami</h2>
+  <p>Klinik dengan dokter profesional & teknologi modern</p>
 </section>
 
 <!-- TESTIMONI -->
 <section>
-  <h2>💖 Testimoni</h2>
-
-  <div class="testi">"Pelayanan sangat memuaskan!" - Siti</div>
-  <div class="testi">"Kulit saya jadi glowing!" - Rina</div>
+  <h2>Testimoni</h2>
+  <div class="testi">"Pelayanan luar biasa!"</div>
+  <div class="testi">"Kulit jadi glowing!"</div>
 </section>
 
 <!-- KONTAK -->
 <section>
-  <h2>📞 Hubungi Kami</h2>
+  <h2>Kontak</h2>
   <p>📍 Jl. Contoh No.123</p>
-  <p>📞 0812-3456-7890</p>
-  <p>📧 klinik@email.com</p>
+  <p>📞 08123456789</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Glow Beauty Clinic ✨</p>
+  <p>© 2026 Glow Clinic</p>
 </footer>
+
+<a href="https://wa.me/6281234567890" class="wa">💬</a>
 
 </body>
 </html>
