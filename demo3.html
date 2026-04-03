@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe Premium</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+}
+
+/* HEADER */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+    url('cafe.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+header h1{
+    font-size:45px;
+    background:linear-gradient(45deg,#d4af37,#ffd700,#fff2b0);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:fadeDown 1.5s ease;
+}
+
+header p{
+    margin-top:10px;
+    color:#ccc;
+    animation:fadeUp 1.5s ease;
+}
+
+.btn{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#d4af37;
+    color:black;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ffd700;
+    transform:scale(1.05);
+}
+
+/* SECTION */
+.section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.section h2{
+    color:#d4af37;
+    margin-bottom:30px;
+}
+
+/* MENU */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:15px;
+    width:260px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* GALLERY */
+.gallery img{
+    width:280px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* TESTI */
+.testi{
+    max-width:600px;
+    margin:auto;
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* WA FLOAT */
+.wa{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#d4af37;
+    color:black;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* ANIMASI */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>Nikmati Kopi Premium ☕</h1>
+    <p>Suasana nyaman & rasa yang tak terlupakan</p>
+    <a href="https://wa.me/6288893618620?text=Halo%20saya%20mau%20reservasi%20cafe" class="btn">
+        Reservasi Sekarang
+    </a>
+</header>
+
+<!-- MENU -->
+<section class="section fade">
+    <h2>Menu Favorit</h2>
+
+    <div class="container">
+        <div class="card">
+            <img src="kopi1.jpg">
+            <h3>Espresso</h3>
+            <p>Kopi kuat dengan rasa premium</p>
+        </div>
+
+        <div class="card">
+            <img src="kopi2.jpg">
+            <h3>Cappuccino</h3>
+            <p>Perpaduan kopi & susu lembut</p>
+        </div>
+
+        <div class="card">
+            <img src="dessert.jpg">
+            <h3>Dessert</h3>
+            <p>Teman terbaik minum kopi</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section fade">
+    <h2>Gallery Cafe</h2>
+
+    <div class="container gallery">
+        <img src="cafe1.jpg">
+        <img src="cafe2.jpg">
+        <img src="cafe3.jpg">
+    </div>
+</section>
+
+<!-- TESTI -->
+<section class="section fade">
+    <h2>Testimoni</h2>
+
+    <div class="testi">
+        <p>"Tempatnya nyaman banget, kopinya enak dan premium!"</p>
+        <br>
+        <strong>- Pelanggan</strong>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section fade">
+    <h2>Ayo Nongkrong Sekarang</h2>
+    <p>Rasakan pengalaman ngopi terbaik</p>
+
+    <br>
+
+    <a href="https://wa.me/6288893618620?text=Halo%20saya%20mau%20booking%20tempat" class="btn">
+        Booking Tempat
+    </a>
+</section>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/6288893618620?text=Halo%20saya%20mau%20booking" class="wa">💬</a>
+
+<script>
+const fade = document.querySelectorAll('.fade');
+
+function showAnim(){
+    fade.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showAnim);
+window.addEventListener('load', showAnim);
+</script>
+
+</body>
+</html>
