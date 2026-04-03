@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Toko Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      color: #FFD700;
+    }
+
+    header p {
+      color: #ccc;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255,215,0,0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .price {
+      color: #FFD700;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1ebe5d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Toko Online Premium</h1>
+  <p>Belanja mudah & cepat langsung via WhatsApp</p>
+</header>
+
+<div class="container">
+  <div class="products">
+
+    <!-- Produk 1 -->
+    <div class="card">
+      <img src="produk1.jpg" alt="">
+      <div class="card-content">
+        <h3>Serum Wajah Glow</h3>
+        <p class="price">Rp 150.000</p>
+        <a class="btn" href="https://wa.me/628893618620?text=Saya mau beli Serum Glow">Beli via WA</a>
+      </div>
+    </div>
+
+    <!-- Produk 2 -->
+    <div class="card">
+      <img src="produk2.jpg" alt="">
+      <div class="card-content">
+        <h3>Facial Cleanser</h3>
+        <p class="price">Rp 95.000</p>
+        <a class="btn" href="https://wa.me/628893618620?text=Saya mau beli Facial Cleanser">Beli via WA</a>
+      </div>
+    </div>
+
+    <!-- Produk 3 -->
+    <div class="card">
+      <img src="produk3.jpg" alt="">
+      <div class="card-content">
+        <h3>Day Cream Bright</h3>
+        <p class="price">Rp 120.000</p>
+        <a class="btn" href="https://wa.me/628893618620?text=Saya mau beli Day Cream">Beli via WA</a>
+      </div>
+    </div>
+
+    <!-- Produk 4 -->
+    <div class="card">
+      <img src="produk4.jpg" alt="">
+      <div class="card-content">
+        <h3>Night Cream Repair</h3>
+        <p class="price">Rp 130.000</p>
+        <a class="btn" href="https://wa.me/628893618620?text=Saya mau beli Night Cream">Beli via WA</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Toko Online - All Rights Reserved
+</footer>
+
+</body>
+</html>
