@@ -1,161 +1,300 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Developer - Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Developer Profesional</title>
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-    }
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-    header {
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+body {
+    background:#0f0f0f;
+    color:white;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+/* LOADER */
+#loader {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:gold;
+    font-size:24px;
+    z-index:9999;
+}
 
-    header p {
-      margin: 10px 0;
-      font-size: 18px;
-    }
+/* HEADER */
+header {
+    text-align:center;
+    padding:100px 20px;
+    background:linear-gradient(135deg,#000,#1a1a1a);
+    opacity:0;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: white;
-      color: #333;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* TEXT GOLD */
+header h1 {
+    font-size:40px;
+    background:linear-gradient(45deg,gold,#ffd700,#fff2b0);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-    section {
-      padding: 50px 0;
-    }
+header p {
+    margin-top:10px;
+    color:#aaa;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+/* BUTTON PREMIUM */
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:linear-gradient(45deg,gold,#ffd700);
+    color:black;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(255,215,0,0.3);
+}
 
-    .about, .skills {
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-    }
+.btn:hover {
+    transform:scale(1.05);
+}
 
-    .skills span {
-      display: inline-block;
-      background: #e3e3e3;
-      padding: 8px 12px;
-      margin: 5px;
-      border-radius: 6px;
-    }
+/* SECTION */
+.section {
+    padding:70px 20px;
+    text-align:center;
+}
 
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.section h2 {
+    color:gold;
+    margin-bottom:20px;
+}
 
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+/* ABOUT */
+.about img {
+    width:130px;
+    border-radius:50%;
+    border:3px solid gold;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
+/* CONTAINER */
+.container {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #222;
-      color: white;
-    }
-  </style>
+/* CARD */
+.card {
+    background:#1a1a1a;
+    width:300px;
+    border-radius:15px;
+    padding:20px;
+    transition:0.4s;
+}
+
+.card:hover {
+    transform:translateY(-10px) scale(1.03);
+}
+
+.card img {
+    width:100%;
+    border-radius:10px;
+}
+
+/* TESTI */
+.testi {
+    max-width:700px;
+    margin:auto;
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* CONTACT */
+.contact a {
+    background:gold;
+    padding:12px 25px;
+    color:black;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* WA FLOAT */
+.wa {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:gold;
+    color:black;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow:0 0 0 0 rgba(255,215,0,0.5); }
+    70% { box-shadow:0 0 0 15px rgba(255,215,0,0); }
+    100% { box-shadow:0 0 0 0 rgba(255,215,0,0); }
+}
+
+/* ANIMASI */
+.fade {
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s;
+}
+
+.show {
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <div class="container">
-    <h1>Halo, Saya [NAMA KAMU]</h1>
-    <p>Web Developer - Spesialis Website Klinik & Bisnis</p>
-    <a href="https://wa.me/628XXXXXXXXXX" class="btn">Chat WhatsApp</a>
-  </div>
+<!-- LOADER -->
+<div id="loader">Loading...</div>
+
+<!-- HEADER -->
+<header class="fade">
+    <h1>Bikin Website yang Bikin Bisnis Anda Lebih Dipercaya</h1>
+    <p>Website profesional untuk meningkatkan pelanggan & penjualan</p>
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20saya%20tertarik%20buat%20website" class="btn">
+        Konsultasi Gratis
+    </a>
 </header>
 
-<section>
-  <div class="container about">
+<!-- ABOUT -->
+<section class="section about fade">
     <h2>Tentang Saya</h2>
-    <p>Saya adalah web developer yang membantu bisnis & klinik memiliki website profesional agar lebih dipercaya dan mudah ditemukan di Google.</p>
-  </div>
+    <img src="foto.jpg" alt="Foto Profil">
+    <h3 style="margin-top:15px;color:gold;">Lihan Ham</h3>
+
+    <p style="margin-top:10px;color:#ccc;">
+        Saya membantu klinik dan bisnis tampil lebih profesional dengan website modern.
+    </p>
+
+    <p style="color:#aaa;">
+        Website dapat meningkatkan kepercayaan pelanggan dan membantu bisnis Anda berkembang.
+    </p>
+
+    <p style="color:gold;margin-top:10px;">
+        ✔ Website Modern <br>
+        ✔ Mobile Friendly <br>
+        ✔ Terhubung WhatsApp
+    </p>
 </section>
 
-<section>
-  <div class="container skills">
-    <h2>Skill Saya</h2>
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>Landing Page</span>
-    <span>Website Klinik</span>
-  </div>
+<!-- KEUNGGULAN -->
+<section class="section fade">
+    <h2>Kenapa Pilih Saya?</h2>
+
+    <div class="container">
+        <div class="card">
+            <h3>🚀 Fast Response</h3>
+            <p>Respon cepat & profesional</p>
+        </div>
+
+        <div class="card">
+            <h3>💎 Desain Premium</h3>
+            <p>Tampilan modern & elegan</p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Fokus Hasil</h3>
+            <p>Membantu bisnis dapat pelanggan</p>
+        </div>
+    </div>
 </section>
 
-<section>
-  <div class="container">
+<!-- PORTFOLIO -->
+<section class="section fade">
     <h2>Portofolio</h2>
-    <div class="portfolio">
-      
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200">
-        <h3>Website Klinik</h3>
-        <p>Landing page klinik modern & profesional</p>
-      </div>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/300x200">
-        <h3>Website Bisnis</h3>
-        <p>Website untuk UMKM & perusahaan</p>
-      </div>
+    <div class="container">
+
+        <div class="card">
+            <img src="portofolio.jpg" alt="Website Klinik Kecantikan">
+            <h3>Website Klinik Kecantikan</h3>
+            <p>Tampilan premium & meningkatkan kepercayaan</p>
+            <a href="demo1.html" class="btn">Lihat Website</a>
+        </div>
+
+        <div class="card">
+            <img src="portofolio1.jpg" alt="Website Klinik Umum">
+            <h3>Website Klinik Umum</h3>
+            <p>Memudahkan booking & tambah pasien</p>
+            <a href="demo2.html" class="btn">Lihat Website</a>
+        </div>
 
     </div>
-  </div>
 </section>
 
-<section>
-  <div class="container" style="text-align:center;">
-    <h2>Mau Website Juga?</h2>
-    <p>Saya bisa buatkan demo gratis untuk bisnis kamu</p>
-    <a href="https://wa.me/628XXXXXXXXXX" class="btn">Hubungi Sekarang</a>
-  </div>
+<!-- TESTIMONI -->
+<section class="section fade">
+    <h2>Testimoni</h2>
+
+    <div class="testi">
+        <p>"Website sangat membantu bisnis kami terlihat lebih profesional!"</p>
+        <br>
+        <strong>- momidah14098</strong>
+    </div>
 </section>
 
-<footer>
-  <p>© 2026 Web Developer</p>
-</footer>
+<!-- CTA -->
+<section class="section contact fade">
+    <h2>Siap Naikin Bisnis Anda?</h2>
+    <p>Jangan kalah dari kompetitor yang sudah punya website</p>
+
+    <br>
+
+    <a href="https://wa.me/628893618620text=Halo%20saya%20mau%20buat%20website">
+        🔥 Konsultasi Gratis Sekarang
+    </a>
+</section>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/628893618620text=Halo%20saya%20tertarik%20buat%20website" class="wa">💬</a>
+
+<script>
+
+// LOADER + HEADER ANIMASI
+window.onload = () => {
+    document.getElementById("loader").style.display = "none";
+    document.querySelector("header").classList.add("show");
+}
+
+// SCROLL ANIMASI
+const fade = document.querySelectorAll('.fade');
+
+function showAnim(){
+    fade.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 80){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showAnim);
+
+</script>
 
 </body>
 </html>
